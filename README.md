@@ -13,4 +13,5 @@ The app is set up for OAuth2 using google+ and the [omniauth-google-oauth2](http
 * Use `http://localhost:3000/users/auth/google_oauth2/callback` as a redirect URI
 * Enable the `Google+ API` on the `APIs` page 
 
-Feel free to clone and modify.
+## Licence
+The source code is released under the MIT License, http://opensource.org/licenses/MIT. See licence.txt for more details. Feel free to clone and modify.
