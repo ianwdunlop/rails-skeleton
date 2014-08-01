@@ -1,0 +1,27 @@
+<div class="blog-masthead">
+	<div class="container">
+		<nav class="blog-nav">
+		<%= link_to "Home", root_url, class: "blog-nav-item active" %>
+		<%= link_to "Facts", interesting_fact_url, class: "blog-nav-item" %>
+		<%= link_to "Something", something_page_url, class: "blog-nav-item" %>
+		<%= link_to "Click here", please_click_me_url, class: "blog-nav-item" %>
+		<ul class="nav navbar-nav navbar-right"><% if !user_signed_in? %>
+				<li class="medium-padding" id="sign-in-text">Sign in with</li>
+				<li>
+				<%= link_to user_omniauth_authorize_url(:google_oauth2), class: "btn btn-social-icon btn-google-plus skeleton-text-top" do %>
+					<i class="fa fa-google-plus"></i>
+				<% end %>
+				</li>
+				<li class="medium-padding" id="sign-in-text">or</li>
+				<li><div class="btn-group">
+					<%= link_to "Sign in", new_user_session_url, class: "btn btn-default" %>
+					<%= link_to "Register", new_user_registration_url, class: "btn btn-default" %>
+				</div>
+				</li>
+			<% else %>
+				<%= link_to "Log out", destroy_user_session_url, class: "blog-nav-item", method: 'delete' %>
+			<% end %>
+		</ul>
+		</nav>
+	</div>
+</div>

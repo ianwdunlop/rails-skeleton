@@ -8,34 +8,7 @@
 	</head>
 	<body>
 		<%= render partial: "shared/flash_messages", flash: flash %>
-		<div class="blog-masthead">
-			<div class="container">
-				<nav class="blog-nav">
-				<a class="blog-nav-item active" href="#">Home</a>
-				<a class="blog-nav-item" href="#">New features</a>
-				<a class="blog-nav-item" href="#">Press</a>
-				<a class="blog-nav-item" href="#">New hires</a>
-				<a class="blog-nav-item" href="#">About</a>
-				<ul class="nav navbar-nav navbar-right"><% if !user_signed_in? %>
-						<li class="medium-padding" id="sign-in-text">Sign in with</li>
-						<li>
-						<%= link_to user_omniauth_authorize_url(:google_oauth2), class: "btn btn-social-icon btn-google-plus skeleton-text-top" do %>
-							<i class="fa fa-google-plus"></i>
-						<% end %>
-						</li>
-						<li class="medium-padding" id="sign-in-text">or</li>
-						<li><div class="btn-group">
-							<%= link_to "Sign in", new_user_session_url, class: "btn btn-default" %>
-							<%= link_to "Register", new_user_registration_url, class: "btn btn-default" %>
-						</div>
-						</li>
-					<% else %>
-						<%= link_to "Log out", destroy_user_session_url, class: "blog-nav-item", method: 'delete' %>
-					<% end %>
-				</ul>
-				</nav>
-			</div>
-		</div>
+		<%= render partial: "shared/navbar" %>
 		<div class="container">
 			<div class="blog-header">
 				<h1 class="blog-title">Skeleton</h1>
@@ -53,15 +26,13 @@
 						<%= render partial: "shared/another_sidebar" %>
 					</div>
 					<div class="sidebar-module">
-						<h4>Elsewhere</h4>
-						<ol class="list-unstyled">
-							<li><a href="#">GitHub</a></li>
-							<li><a href="#">Twitter</a></li>
-							<li><a href="#">Facebook</a></li>
-						</ol>
+						<%= render partial: "shared/links_sidebar" %>
 					</div>
 				</div>
-				<row>
 			</div>
+		</div>
+		<div class="blog-footer">
+			<p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>. <em>Rails-i-fied</em> by <a href="https://twitter.com/travellingbard">@travellingbard</a>.</p>
+		</div>
 		</body>
 	</html>
