@@ -10,10 +10,7 @@
 		<%= render partial: "shared/flash_messages", flash: flash %>
 		<%= render partial: "shared/navbar" %>
 		<div class="container">
-			<div class="blog-header">
-				<h1 class="blog-title">Skeleton</h1>
-				<p class="lead blog-description">Rails 4.1 web application with devise, oauth, bootstrap and more</p>
-			</div>
+			<%= render partial: "shared/header" %>
 			<div class=""row">
 				<div class="col-sm-8 blog-main">
 					<%= yield %>
@@ -31,8 +28,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="blog-footer">
-			<p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>. <em>Rails-i-fied</em> by <a href="https://twitter.com/travellingbard">@travellingbard</a>.</p>
-		</div>
-		</body>
-	</html>
+		<%= render partial: "shared/footer" %>
+	</body>
+</html>
